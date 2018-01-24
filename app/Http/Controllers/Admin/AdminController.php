@@ -10,6 +10,8 @@ class AdminController extends Controller
     //
     
     
+	public $layout = 'layouts.ggadmin3';
+	
     /**
      * Show the application dashboard.
      *
@@ -17,7 +19,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('home');
+    	
+        return view('admin.home');
+    }
+    
+    
+    public function listUser()
+    {
+    	
+    	echo "here";
+    	
     }
     
 }
