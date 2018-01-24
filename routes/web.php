@@ -19,4 +19,6 @@ Route::get('/homepage', 'HomeController@index')->name('homepage');
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/ggadmin', 'admin\AdminController@index');
