@@ -40,14 +40,40 @@
 		
 
 		<div id="page-wrapper">
-			@yield('content')
+		    <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Notifications</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <div class="row">
+            	here2<hr>
+				@yield('content')
+			</div>
 		</div>
 		
 	</div>
 
 
+    <!-- jQuery -->
+    <script src="/admin/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/admin/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/admin/vendor/raphael/raphael.min.js"></script>
+    <script src="/admin/vendor/morrisjs/morris.min.js"></script>
+    <!-- <script src="../data/morris-data.js"></script>  -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/admin/js/admin.js"></script>	
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

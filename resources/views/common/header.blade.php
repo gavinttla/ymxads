@@ -7,3 +7,10 @@
     </button>
     <a class="navbar-brand" href="index.html">{{ __('admin.ymxads_admin') }}</a>
 </div>
+
+
+
+
+<div class="navbar-default sidebar" role="navigation">
+	@include('common.leftmenu')
+</div>

@@ -14,6 +14,11 @@ return [
     */
 
     'ymxads_admin' => '亚马逊推广后台管理',
-    'throttle' => '登录次数太频繁，请在 :seconds 秒后再试。',
+    'user' => '用户',
+	'create_user' => '创建用户',
+	'manager_user' => '管理用户',
+	'user_group' => '用户组',
+	'user_permission' => '用户权限',
+		
 
 ];
