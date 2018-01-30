@@ -13,12 +13,21 @@ return [
     |
     */
 
-    'ymxads_admin' => '亚马逊推广后台管理',
+    
+	'search' => '搜索',
+		
+	'dashboard' => '主面板',
+		
+	'ymxads_admin' => '亚马逊推广后台管理',
     'user' => '用户',
 	'create_user' => '创建用户',
-	'manager_user' => '管理用户',
+	'manage_user' => '管理用户',
 	'user_group' => '用户组',
 	'user_permission' => '用户权限',
 		
+	'promote_product' => '推广产品',
+	'create_product' => '创建推广产品',
+	'manage_product' => '管理推广产品',	
+	
 
 ];

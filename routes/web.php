@@ -22,3 +22,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/ggadmin', 'admin\AdminController@index');
+
+Route::group(['namespace' => 'admin\Admin'], function () {
+
+	
+});
