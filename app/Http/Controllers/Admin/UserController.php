@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
     //
     
@@ -22,17 +20,25 @@ class AdminController extends Controller
     public function index()
     {
 
-    	//dd(App::getLocale());
-        //return "here2";
         return view('admin.home');
     }
     
     
-    public function listUser()
+    public function listuser()
     {
     	
     	echo "here";
     	
     }
+    
+    public function show()
+    {
+    	echo "show user3";
+    }
+    
+    public function addcredit()
+    {
+    	echo "add credit";
+    }    
     
 }

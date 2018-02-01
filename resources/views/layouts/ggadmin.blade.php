@@ -30,31 +30,73 @@
 </head>
 <body>
 
-
-	
-    <div id="wrapper">
-
-    	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    		@include('common.header')
-    	</nav>
-		
-
-		<div id="page-wrapper">
-		    <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Notifications</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            
+    @guest
+	 
+        <div class="container">
             <div class="row">
-            	here2<hr>
-				@yield('content')
-			</div>
-		</div>
-		
-	</div>
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{ __('admin.sign_in') }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="{{ __('admin.username') }}" name="email" type="email" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="{{ __('admin.password') }}" name="password" type="password" value="">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <?php echo captcha_img(); ?>
+                                        </span>
+                                        <input class="form-control captcha" id="captcha" placeholder="{{ __('admin.enter_captcha') }}" type="text" name="captcha"> 
+                                    </div>
+                                    
+                                    
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox" value="Remember Me">{{ __('admin.remember_me') }}
+                                        </label>
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <a href="index.html" class="btn btn-lg btn-success btn-block">{{ __('admin.login') }}</a>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+	@else
 
+        <div id="wrapper">
+    
+        	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        		@include('common.header')
+        	</nav>
+    		
+    
+    		<div id="page-wrapper">
+    		    <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Notifications</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                
+                <div class="row">
+                	here2<hr>
+    				@yield('content')
+    			</div>
+    		</div>
+    		
+    	</div>
+
+    @endguest
 
     <!-- jQuery -->
     <script src="/admin/vendor/jquery/jquery.min.js"></script>

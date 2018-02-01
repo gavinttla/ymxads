@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,9 +22,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/ggadmin', 'admin\AdminController@index');
 
-Route::group(['namespace' => 'admin\Admin'], function () {
+// controller can put it into a sub folder, here is: admin
+Route::get('/ggadmin', 'Admin\AdminController@index');
 
+
+Route::group(['prefix' => 'ggadmin', 'namespace' => 'Admin'], function () {
+
+	// the following is hardcode one controller/admin
+	Route::get('user/list', 'UserController@listUser');
 	
 });
+
+
+
+
+
+
