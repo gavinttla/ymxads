@@ -40,10 +40,11 @@
                             <h3 class="panel-title">{{ __('admin.sign_in') }}</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form">
+                            <form role="form" method="post" action="{{ route('adminlogin', [], false) }}">
+                                {{ csrf_field() }}
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="{{ __('admin.username') }}" name="email" type="email" autofocus>
+                                        <input class="form-control" placeholder="{{ __('admin.username') }}" name="username" type="username" autofocus>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" placeholder="{{ __('admin.password') }}" name="password" type="password" value="">

@@ -27,10 +27,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/ggadmin', 'Admin\AdminController@index');
 
 
+// the following for admin routes
 Route::group(['prefix' => 'ggadmin', 'namespace' => 'Admin'], function () {
 
 	// the following is hardcode one controller/admin
 	Route::get('user/list', 'UserController@listUser');
+	
+	// execute login authentication
+	Route::post('login', 'AdminController@login')->name('adminlogin');
+	
+	// execute logout
+	Route::post('logout', 'AdminController@logout')->name('adminlogout');
 	
 });
 

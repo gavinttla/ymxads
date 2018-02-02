@@ -19,7 +19,7 @@ return [
     'password' => '密码',
 	'remember_me' => '记住我',
 	'login' => '登录',
-	'enter_captcha' => '输入上面验证码',
+	'enter_captcha' => '输入验证码',
         
     
     'search' => '搜索',
