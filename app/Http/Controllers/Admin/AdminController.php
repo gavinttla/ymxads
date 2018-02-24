@@ -22,6 +22,11 @@ class AdminController extends Controller
     public function index()
     {
 
+        
+        $var = config('ggdev.ggname');
+        
+        dd($var);
+        
     	//dd(App::getLocale());
         //return "here2";
         return view('admin.home');
