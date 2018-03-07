@@ -5,17 +5,17 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name' => 'valiquan-admin',
+    'name' => 'valiclub-admin',
 
     /*
      * Logo in admin panel header.
      */
-    'logo' => '<b>Valiquan</b> admin',
+    'logo' => '<b>Valiclub</b> admin',
 
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>VL</b>',
+    'logo-mini' => '<b>VC</b>',
 
     /*
      * Route configuration.
