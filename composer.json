@@ -4,6 +4,12 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/richtanus/admin-member.git"
+        }
+    ],
     "require": {
         "php": ">=7.0.0",
         "encore/laravel-admin": "1.5.*",
@@ -12,7 +18,8 @@
         "laravel-admin-ext/messages": "@dev",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "mews/captcha": "^2.1"
+        "mews/captcha": "^2.1",
+        "ggadmin/admin-member": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
