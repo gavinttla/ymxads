@@ -105,7 +105,7 @@ class Between extends AbstractFilter
     protected function setupDatetime($options = [])
     {
         $options['format'] = array_get($options, 'format', 'YYYY-MM-DD HH:mm:ss');
-        $options['locale'] = array_get($options, 'locale', config('app.locale'));
+        //$options['locale'] = array_get($options, 'locale', config('app.locale'));
 
         $startOptions = json_encode($options);
         $endOptions = json_encode($options + ['useCurrent' => false]);

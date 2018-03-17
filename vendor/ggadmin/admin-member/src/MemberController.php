@@ -75,6 +75,21 @@ class MemberController
             $grid->created_at();
             $grid->updated_at();
 
+            $grid->actions(function (Grid\Displayers\Actions $actions) {
+                //$actions->disableEdit();
+                $actions->disableDelete();
+            
+                $url = $actions->getResource().'/create?';
+            
+                $url .= http_build_query([
+                    'title' => 'Re:'.$actions->row->title,
+                    'to'    => $actions->row->from,
+                ]);
+            
+                $actions->prepend("<a class=\"btn btn-xs\" href=\"$url\"><i class=\"fa fa-reply\"></i></a>");
+                //$actions->prepend("<a href=\"http://www.google.com\">here</a>");
+            });
+            
             $grid->filter(function ($filter) {
                 $filter->disableIdFilter();
                 $filter->like('name');

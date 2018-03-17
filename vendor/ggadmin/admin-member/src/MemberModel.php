@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class MemberModel extends Model
 {
+    
+    
+    protected $table = 'users';
+    
+    
     /**
      * Settings constructor.
      *
@@ -17,6 +22,6 @@ class MemberModel extends Model
 
         $this->setConnection(config('admin.database.connection') ?: config('database.default'));
 
-        $this->setTable(config('admin.extensions.member.table', 'users'));
+        //$this->setTable(config('admin.extensions.member.table', 'users'));
     }
 }

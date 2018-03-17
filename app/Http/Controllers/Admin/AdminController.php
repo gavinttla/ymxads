@@ -25,7 +25,7 @@ class AdminController extends Controller
         
         $var = config('ggdev.ggname');
         
-        dd($var);
+        //dd($var);
         
     	//dd(App::getLocale());
         //return "here2";
