@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Form;
+namespace App\Http\Manager\Form;
 
-use Encore\Admin\Form;
+use App\Http\Manager\Form;
 use Illuminate\Support\Collection;
 
 class Tab

@@ -1,17 +1,17 @@
 <?php
 
-namespace Encore\Admin;
+namespace App\Http\Manager;
 
 use Closure;
-use Encore\Admin\Exception\Handler;
-use Encore\Admin\Grid\Column;
-use Encore\Admin\Grid\Displayers\Actions;
-use Encore\Admin\Grid\Displayers\RowSelector;
-use Encore\Admin\Grid\Exporter;
-use Encore\Admin\Grid\Filter;
-use Encore\Admin\Grid\Model;
-use Encore\Admin\Grid\Row;
-use Encore\Admin\Grid\Tools;
+use App\Http\Manager\Exception\Handler;
+use App\Http\Manager\Grid\Column;
+use App\Http\Manager\Grid\Displayers\Actions;
+use App\Http\Manager\Grid\Displayers\RowSelector;
+use App\Http\Manager\Grid\Exporter;
+use App\Http\Manager\Grid\Filter;
+use App\Http\Manager\Grid\Model;
+use App\Http\Manager\Grid\Row;
+use App\Http\Manager\Grid\Tools;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -29,7 +29,7 @@ class Grid
     /**
      * The grid data model instance.
      *
-     * @var \Encore\Admin\Grid\Model
+     * @var \App\Http\Manager\Grid\Model
      */
     protected $model;
 
@@ -92,7 +92,7 @@ class Grid
     /**
      * The grid Filter.
      *
-     * @var \Encore\Admin\Grid\Filter
+     * @var \App\Http\Manager\Grid\Filter
      */
     protected $filter;
 
@@ -907,19 +907,19 @@ class Grid
     public static function registerColumnDisplayer()
     {
         $map = [
-            'editable'    => \Encore\Admin\Grid\Displayers\Editable::class,
-            'switch'      => \Encore\Admin\Grid\Displayers\SwitchDisplay::class,
-            'switchGroup' => \Encore\Admin\Grid\Displayers\SwitchGroup::class,
-            'select'      => \Encore\Admin\Grid\Displayers\Select::class,
-            'image'       => \Encore\Admin\Grid\Displayers\Image::class,
-            'label'       => \Encore\Admin\Grid\Displayers\Label::class,
-            'button'      => \Encore\Admin\Grid\Displayers\Button::class,
-            'link'        => \Encore\Admin\Grid\Displayers\Link::class,
-            'badge'       => \Encore\Admin\Grid\Displayers\Badge::class,
-            'progressBar' => \Encore\Admin\Grid\Displayers\ProgressBar::class,
-            'radio'       => \Encore\Admin\Grid\Displayers\Radio::class,
-            'checkbox'    => \Encore\Admin\Grid\Displayers\Checkbox::class,
-            'orderable'   => \Encore\Admin\Grid\Displayers\Orderable::class,
+            'editable'    => \App\Http\Manager\Grid\Displayers\Editable::class,
+            'switch'      => \App\Http\Manager\Grid\Displayers\SwitchDisplay::class,
+            'switchGroup' => \App\Http\Manager\Grid\Displayers\SwitchGroup::class,
+            'select'      => \App\Http\Manager\Grid\Displayers\Select::class,
+            'image'       => \App\Http\Manager\Grid\Displayers\Image::class,
+            'label'       => \App\Http\Manager\Grid\Displayers\Label::class,
+            'button'      => \App\Http\Manager\Grid\Displayers\Button::class,
+            'link'        => \App\Http\Manager\Grid\Displayers\Link::class,
+            'badge'       => \App\Http\Manager\Grid\Displayers\Badge::class,
+            'progressBar' => \App\Http\Manager\Grid\Displayers\ProgressBar::class,
+            'radio'       => \App\Http\Manager\Grid\Displayers\Radio::class,
+            'checkbox'    => \App\Http\Manager\Grid\Displayers\Checkbox::class,
+            'orderable'   => \App\Http\Manager\Grid\Displayers\Orderable::class,
         ];
 
         foreach ($map as $abstract => $class) {

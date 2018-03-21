@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Form;
+namespace App\Http\Manager\Form;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Form;
+use App\Http\Manager\Admin;
+use App\Http\Manager\Form;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;

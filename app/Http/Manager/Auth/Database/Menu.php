@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Auth\Database;
+namespace App\Http\Manager\Auth\Database;
 
-use Encore\Admin\Traits\AdminBuilder;
-use Encore\Admin\Traits\ModelTree;
+use App\Http\Manager\Traits\AdminBuilder;
+use App\Http\Manager\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\DB;
@@ -35,6 +35,7 @@ class Menu extends Model
      */
     public function __construct(array $attributes = [])
     {
+        /*
         $connection = config('admin.database.connection') ?: config('database.default');
 
         $this->setConnection($connection);
@@ -42,6 +43,7 @@ class Menu extends Model
         $this->setTable(config('admin.database.menu_table'));
 
         parent::__construct($attributes);
+        */
     }
 
     /**
@@ -63,10 +65,64 @@ class Menu extends Model
      */
     public function allNodes() : array
     {
+        /*
         $orderColumn = DB::getQueryGrammar()->wrap($this->orderColumn);
         $byOrder = $orderColumn.' = 0,'.$orderColumn;
 
         return static::with('roles')->orderByRaw($byOrder)->get()->toArray();
+        */
+        
+        $arrResult = array(
+            0 => array(
+                'id' => 1,
+                'parent_id' => 0,
+                'order' => 1,
+                'title' => 'Dashboard',
+                'icon' => 'fa-home',
+                'uri' => '/',
+                'created_at' => null,
+                'updated_at' => null,
+                'roles' => array()
+                ),
+            1 => array(
+                'id' => 2,
+                'parent_id' => 0,
+                'order' => 2,
+                'title' => 'Products',
+                'icon' => 'fa-gift',
+                'uri' => '/manager/gift',
+                'created_at' => null,
+                'updated_at' => null,
+                'roles' => array()
+                ),
+            2 => array(
+                'id' => 3,
+                'parent_id' => 0,
+                'order' => 3,
+                'title' => 'Orders',
+                'icon' => 'fa-shopping-cart',
+                'uri' => '/manager/order',
+                'created_at' => null,
+                'updated_at' => null,
+                'roles' => array()
+            ),        
+            3 => array(
+                'id' => 4,
+                'parent_id' => 0,
+                'order' => 4,
+                'title' => 'Message',
+                'icon' => 'fa-paper-plane-o',
+                'uri' => '/manager/message',
+                'created_at' => null,
+                'updated_at' => null,
+                'roles' => array()
+            ),
+            
+        );
+     
+        return $arrResult;
+        
+        
     }
 
     /**

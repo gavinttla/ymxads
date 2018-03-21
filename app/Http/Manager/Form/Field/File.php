@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Form\Field;
+namespace App\Http\Manager\Form\Field;
 
-use Encore\Admin\Form\Field;
+use App\Http\Manager\Form\Field;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Displayers;
+namespace App\Http\Manager\Grid\Displayers;
 
-use Encore\Admin\Admin;
+use App\Http\Manager\Admin;
 
 class SwitchDisplay extends AbstractDisplayer
 {

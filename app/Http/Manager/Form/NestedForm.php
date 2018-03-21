@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Form;
+namespace App\Http\Manager\Form;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Form;
+use App\Http\Manager\Admin;
+use App\Http\Manager\Form;
 use Illuminate\Support\Collection;
 
 /**
@@ -84,7 +84,7 @@ class NestedForm
     protected $original = [];
 
     /**
-     * @var \Encore\Admin\Form
+     * @var \App\Http\Manager\Form
      */
     protected $form;
 
@@ -217,7 +217,7 @@ class NestedForm
                 $value = $field->prepare($value);
             }
 
-            if (($field instanceof \Encore\Admin\Form\Field\Hidden) || $value != $field->original()) {
+            if (($field instanceof \App\Http\Manager\Form\Field\Hidden) || $value != $field->original()) {
                 if (is_array($columns)) {
                     foreach ($columns as $name => $column) {
                         array_set($prepared, $column, $value[$name]);

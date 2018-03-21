@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Filter\Presenter;
+namespace App\Http\Manager\Grid\Filter\Presenter;
 
-use Encore\Admin\Admin;
+use App\Http\Manager\Admin;
 
 class Text extends Presenter
 {

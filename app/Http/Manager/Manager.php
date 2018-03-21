@@ -3,9 +3,9 @@
 namespace App\Http\Manager;
 
 use Closure;
-use Encore\Admin\Auth\Database\Menu;
-use Encore\Admin\Layout\Content;
-use Encore\Admin\Widgets\Navbar;
+use App\Http\Manager\Auth\Database\Menu;
+use App\Http\Manager\Layout\Content;
+use App\Http\Manager\Widgets\Navbar;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -46,7 +46,7 @@ class Manager
      * @param $model
      * @param Closure $callable
      *
-     * @return \Encore\Admin\Grid
+     * @return \App\Http\Manager\Grid
      */
     public function grid($model, Closure $callable)
     {
@@ -57,7 +57,7 @@ class Manager
      * @param $model
      * @param Closure $callable
      *
-     * @return \Encore\Admin\Form
+     * @return \App\Http\Manager\Form
      */
     public function form($model, Closure $callable)
     {
@@ -69,7 +69,7 @@ class Manager
      *
      * @param $model
      *
-     * @return \Encore\Admin\Tree
+     * @return \App\Http\Manager\Tree
      */
     public function tree($model, Closure $callable = null)
     {
@@ -79,7 +79,7 @@ class Manager
     /**
      * @param Closure $callable
      *
-     * @return \Encore\Admin\Layout\Content
+     * @return \App\Http\Manager\Layout\Content
      */
     public function content(Closure $callable = null)
     {
@@ -123,7 +123,7 @@ class Manager
 
         static::$css = array_merge(static::$css, $css);
 
-        return view('admin::partials.css', ['css' => array_unique(static::$css)]);
+        return view('manager::partials.css', ['css' => array_unique(static::$css)]);
     }
 
     /**
@@ -145,7 +145,7 @@ class Manager
 
         static::$js = array_merge(static::$js, $js);
 
-        return view('admin::partials.js', ['js' => array_unique(static::$js)]);
+        return view('manager::partials.js', ['js' => array_unique(static::$js)]);
     }
 
     /**
@@ -161,7 +161,7 @@ class Manager
             return;
         }
 
-        return view('admin::partials.script', ['script' => array_unique(self::$script)]);
+        return view('manager::partials.script', ['script' => array_unique(self::$script)]);
     }
 
     /**
@@ -175,13 +175,13 @@ class Manager
     }
 
     /**
-     * Get admin title.
+     * Get manager title.
      *
      * @return Config
      */
     public function title()
     {
-        return config('admin.title');
+        return config('manager.title');
     }
 
     /**
@@ -191,7 +191,7 @@ class Manager
      */
     public function user()
     {
-        return Auth::guard('admin')->user();
+        return Auth::guard('web')->user();
     }
 
     /**
@@ -213,7 +213,7 @@ class Manager
     /**
      * Get navbar object.
      *
-     * @return \Encore\Admin\Widgets\Navbar
+     * @return \App\Http\Manager\Widgets\Navbar
      */
     public function getNavbar()
     {
@@ -232,9 +232,9 @@ class Manager
     public function registerAuthRoutes()
     {
         $attributes = [
-            'prefix'     => config('admin.route.prefix'),
-            'namespace'  => 'Encore\Admin\Controllers',
-            'middleware' => config('admin.route.middleware'),
+            'prefix'     => config('manager.route.prefix'),
+            'namespace'  => 'App\Http\Manager\Controllers',
+            'middleware' => config('manager.route.middleware'),
         ];
 
         Route::group($attributes, function ($router) {

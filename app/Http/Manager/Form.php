@@ -1,14 +1,14 @@
 <?php
 
-namespace Encore\Admin;
+namespace App\Http\Manager;
 
 use Closure;
-use Encore\Admin\Exception\Handler;
-use Encore\Admin\Form\Builder;
-use Encore\Admin\Form\Field;
-use Encore\Admin\Form\Field\File;
-use Encore\Admin\Form\Row;
-use Encore\Admin\Form\Tab;
+use App\Http\Manager\Exception\Handler;
+use App\Http\Manager\Form\Builder;
+use App\Http\Manager\Form\Field;
+use App\Http\Manager\Form\Field\File;
+use App\Http\Manager\Form\Row;
+use App\Http\Manager\Form\Tab;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Http\Request;
@@ -1216,52 +1216,52 @@ class Form
     public static function registerBuiltinFields()
     {
         $map = [
-            'button'         => \Encore\Admin\Form\Field\Button::class,
-            'checkbox'       => \Encore\Admin\Form\Field\Checkbox::class,
-            'color'          => \Encore\Admin\Form\Field\Color::class,
-            'currency'       => \Encore\Admin\Form\Field\Currency::class,
-            'date'           => \Encore\Admin\Form\Field\Date::class,
-            'dateRange'      => \Encore\Admin\Form\Field\DateRange::class,
-            'datetime'       => \Encore\Admin\Form\Field\Datetime::class,
-            'dateTimeRange'  => \Encore\Admin\Form\Field\DatetimeRange::class,
-            'datetimeRange'  => \Encore\Admin\Form\Field\DatetimeRange::class,
-            'decimal'        => \Encore\Admin\Form\Field\Decimal::class,
-            'display'        => \Encore\Admin\Form\Field\Display::class,
-            'divider'        => \Encore\Admin\Form\Field\Divide::class,
-            'divide'         => \Encore\Admin\Form\Field\Divide::class,
-            'embeds'         => \Encore\Admin\Form\Field\Embeds::class,
-            'editor'         => \Encore\Admin\Form\Field\Editor::class,
-            'email'          => \Encore\Admin\Form\Field\Email::class,
-            'file'           => \Encore\Admin\Form\Field\File::class,
-            'hasMany'        => \Encore\Admin\Form\Field\HasMany::class,
-            'hidden'         => \Encore\Admin\Form\Field\Hidden::class,
-            'id'             => \Encore\Admin\Form\Field\Id::class,
-            'image'          => \Encore\Admin\Form\Field\Image::class,
-            'ip'             => \Encore\Admin\Form\Field\Ip::class,
-            'map'            => \Encore\Admin\Form\Field\Map::class,
-            'mobile'         => \Encore\Admin\Form\Field\Mobile::class,
-            'month'          => \Encore\Admin\Form\Field\Month::class,
-            'multipleSelect' => \Encore\Admin\Form\Field\MultipleSelect::class,
-            'number'         => \Encore\Admin\Form\Field\Number::class,
-            'password'       => \Encore\Admin\Form\Field\Password::class,
-            'radio'          => \Encore\Admin\Form\Field\Radio::class,
-            'rate'           => \Encore\Admin\Form\Field\Rate::class,
-            'select'         => \Encore\Admin\Form\Field\Select::class,
-            'slider'         => \Encore\Admin\Form\Field\Slider::class,
-            'switch'         => \Encore\Admin\Form\Field\SwitchField::class,
-            'text'           => \Encore\Admin\Form\Field\Text::class,
-            'textarea'       => \Encore\Admin\Form\Field\Textarea::class,
-            'time'           => \Encore\Admin\Form\Field\Time::class,
-            'timeRange'      => \Encore\Admin\Form\Field\TimeRange::class,
-            'url'            => \Encore\Admin\Form\Field\Url::class,
-            'year'           => \Encore\Admin\Form\Field\Year::class,
-            'html'           => \Encore\Admin\Form\Field\Html::class,
-            'tags'           => \Encore\Admin\Form\Field\Tags::class,
-            'icon'           => \Encore\Admin\Form\Field\Icon::class,
-            'multipleFile'   => \Encore\Admin\Form\Field\MultipleFile::class,
-            'multipleImage'  => \Encore\Admin\Form\Field\MultipleImage::class,
-            'captcha'        => \Encore\Admin\Form\Field\Captcha::class,
-            'listbox'        => \Encore\Admin\Form\Field\Listbox::class,
+            'button'         => \App\Http\Manager\Form\Field\Button::class,
+            'checkbox'       => \App\Http\Manager\Form\Field\Checkbox::class,
+            'color'          => \App\Http\Manager\Form\Field\Color::class,
+            'currency'       => \App\Http\Manager\Form\Field\Currency::class,
+            'date'           => \App\Http\Manager\Form\Field\Date::class,
+            'dateRange'      => \App\Http\Manager\Form\Field\DateRange::class,
+            'datetime'       => \App\Http\Manager\Form\Field\Datetime::class,
+            'dateTimeRange'  => \App\Http\Manager\Form\Field\DatetimeRange::class,
+            'datetimeRange'  => \App\Http\Manager\Form\Field\DatetimeRange::class,
+            'decimal'        => \App\Http\Manager\Form\Field\Decimal::class,
+            'display'        => \App\Http\Manager\Form\Field\Display::class,
+            'divider'        => \App\Http\Manager\Form\Field\Divide::class,
+            'divide'         => \App\Http\Manager\Form\Field\Divide::class,
+            'embeds'         => \App\Http\Manager\Form\Field\Embeds::class,
+            'editor'         => \App\Http\Manager\Form\Field\Editor::class,
+            'email'          => \App\Http\Manager\Form\Field\Email::class,
+            'file'           => \App\Http\Manager\Form\Field\File::class,
+            'hasMany'        => \App\Http\Manager\Form\Field\HasMany::class,
+            'hidden'         => \App\Http\Manager\Form\Field\Hidden::class,
+            'id'             => \App\Http\Manager\Form\Field\Id::class,
+            'image'          => \App\Http\Manager\Form\Field\Image::class,
+            'ip'             => \App\Http\Manager\Form\Field\Ip::class,
+            'map'            => \App\Http\Manager\Form\Field\Map::class,
+            'mobile'         => \App\Http\Manager\Form\Field\Mobile::class,
+            'month'          => \App\Http\Manager\Form\Field\Month::class,
+            'multipleSelect' => \App\Http\Manager\Form\Field\MultipleSelect::class,
+            'number'         => \App\Http\Manager\Form\Field\Number::class,
+            'password'       => \App\Http\Manager\Form\Field\Password::class,
+            'radio'          => \App\Http\Manager\Form\Field\Radio::class,
+            'rate'           => \App\Http\Manager\Form\Field\Rate::class,
+            'select'         => \App\Http\Manager\Form\Field\Select::class,
+            'slider'         => \App\Http\Manager\Form\Field\Slider::class,
+            'switch'         => \App\Http\Manager\Form\Field\SwitchField::class,
+            'text'           => \App\Http\Manager\Form\Field\Text::class,
+            'textarea'       => \App\Http\Manager\Form\Field\Textarea::class,
+            'time'           => \App\Http\Manager\Form\Field\Time::class,
+            'timeRange'      => \App\Http\Manager\Form\Field\TimeRange::class,
+            'url'            => \App\Http\Manager\Form\Field\Url::class,
+            'year'           => \App\Http\Manager\Form\Field\Year::class,
+            'html'           => \App\Http\Manager\Form\Field\Html::class,
+            'tags'           => \App\Http\Manager\Form\Field\Tags::class,
+            'icon'           => \App\Http\Manager\Form\Field\Icon::class,
+            'multipleFile'   => \App\Http\Manager\Form\Field\MultipleFile::class,
+            'multipleImage'  => \App\Http\Manager\Form\Field\MultipleImage::class,
+            'captcha'        => \App\Http\Manager\Form\Field\Captcha::class,
+            'listbox'        => \App\Http\Manager\Form\Field\Listbox::class,
         ];
 
         foreach ($map as $abstract => $class) {

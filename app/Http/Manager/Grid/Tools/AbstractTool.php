@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Tools;
+namespace App\Http\Manager\Grid\Tools;
 
-use Encore\Admin\Grid;
+use App\Http\Manager\Grid;
 use Illuminate\Contracts\Support\Renderable;
 
 abstract class AbstractTool implements Renderable

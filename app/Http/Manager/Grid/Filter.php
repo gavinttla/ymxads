@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Grid;
+namespace App\Http\Manager\Grid;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Grid\Filter\AbstractFilter;
+use App\Http\Manager\Facades\Manager;
+use App\Http\Manager\Grid\Filter\AbstractFilter;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Encore\Admin\Grid;
+namespace App\Http\Manager\Grid;
 
-use Encore\Admin\Grid;
-use Encore\Admin\Grid\Tools\AbstractTool;
-use Encore\Admin\Grid\Tools\BatchActions;
-use Encore\Admin\Grid\Tools\RefreshButton;
+use App\Http\Manager\Grid;
+use App\Http\Manager\Grid\Tools\AbstractTool;
+use App\Http\Manager\Grid\Tools\BatchActions;
+use App\Http\Manager\Grid\Tools\RefreshButton;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
 

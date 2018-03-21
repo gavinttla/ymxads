@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Middleware;
+namespace App\Http\Manager\Middleware;
 
-use Encore\Admin\Auth\Permission as Checker;
-use Encore\Admin\Facades\Admin;
+use App\Http\Manager\Auth\Permission as Checker;
+use App\Http\Manager\Facades\Manager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

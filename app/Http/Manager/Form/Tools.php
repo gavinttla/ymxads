@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Form;
+namespace App\Http\Manager\Form;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Form;
+use App\Http\Manager\Facades\Manager;
+use App\Http\Manager\Form;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

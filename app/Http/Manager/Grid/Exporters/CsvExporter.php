@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Grid\Exporters;
+namespace App\Http\Manager\Grid\Exporters;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Tools;
+namespace App\Http\Manager\Grid\Tools;
 
-use Encore\Admin\Grid;
+use App\Http\Manager\Grid;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Input;
 

@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
     		
+        App\Http\Manager\ManagerServiceProvider::class,
     	Mews\Captcha\CaptchaServiceProvider::class,
 
     ],
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
     		
     	'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'manager' => App\Http\Manager\Facades\Manager::class,
 
     ],
 

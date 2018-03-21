@@ -1,10 +1,10 @@
 <?php
 
-namespace Encore\Admin\Traits;
+namespace App\Http\Manager\Traits;
 
-use Encore\Admin\Form;
-use Encore\Admin\Grid;
-use Encore\Admin\Tree;
+use App\Http\Manager\Form;
+use App\Http\Manager\Grid;
+use App\Http\Manager\Tree;
 
 trait AdminBuilder
 {

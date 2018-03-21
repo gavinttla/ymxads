@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin;
+namespace App\Http\Manager;
 
 use Closure;
-use Encore\Admin\Tree\Tools;
+use App\Http\Manager\Tree\Tools;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 

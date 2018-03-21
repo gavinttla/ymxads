@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Form\Field;
+namespace App\Http\Manager\Form\Field;
 
 use Closure;
-use Encore\Admin\Form\Field;
+use App\Http\Manager\Form\Field;
 
 class Display extends Field
 {

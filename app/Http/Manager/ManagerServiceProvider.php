@@ -1,20 +1,20 @@
 <?php
 
-namespace Encore\Admin;
+namespace App\Http\Manager;
 
 use Illuminate\Support\ServiceProvider;
 
-class AdminServiceProvider extends ServiceProvider
+class ManagerServiceProvider extends ServiceProvider
 {
     /**
      * @var array
      */
     protected $commands = [
-        'Encore\Admin\Console\MakeCommand',
-        'Encore\Admin\Console\MenuCommand',
-        'Encore\Admin\Console\InstallCommand',
-        'Encore\Admin\Console\UninstallCommand',
-        'Encore\Admin\Console\ImportCommand',
+        'App\Http\Manager\Console\MakeCommand',
+        'App\Http\Manager\Console\MenuCommand',
+        'App\Http\Manager\Console\InstallCommand',
+        'App\Http\Manager\Console\UninstallCommand',
+        'App\Http\Manager\Console\ImportCommand',
     ];
 
     /**
@@ -23,11 +23,11 @@ class AdminServiceProvider extends ServiceProvider
      * @var array
      */
     protected $routeMiddleware = [
-        'admin.auth'       => \Encore\Admin\Middleware\Authenticate::class,
-        'admin.pjax'       => \Encore\Admin\Middleware\Pjax::class,
-        'admin.log'        => \Encore\Admin\Middleware\LogOperation::class,
-        'admin.permission' => \Encore\Admin\Middleware\Permission::class,
-        'admin.bootstrap'  => \Encore\Admin\Middleware\Bootstrap::class,
+        'manager.auth'       => \App\Http\Manager\Middleware\Authenticate::class,
+        'manager.pjax'       => \App\Http\Manager\Middleware\Pjax::class,
+        'manager.log'        => \App\Http\Manager\Middleware\LogOperation::class,
+        'manager.permission' => \App\Http\Manager\Middleware\Permission::class,
+        'manager.bootstrap'  => \App\Http\Manager\Middleware\Bootstrap::class,
     ];
 
     /**
@@ -36,12 +36,12 @@ class AdminServiceProvider extends ServiceProvider
      * @var array
      */
     protected $middlewareGroups = [
-        'admin' => [
-            'admin.auth',
-            'admin.pjax',
-            'admin.log',
-            'admin.bootstrap',
-            'admin.permission',
+        'manager' => [
+            'manager.auth',
+            'manager.pjax',
+            'manager.log',
+            'manager.bootstrap',
+            'manager.permission',
         ],
     ];
 
@@ -52,9 +52,10 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'admin');
 
-        if (file_exists($routes = admin_path('routes.php'))) {
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'manager');
+
+        if (file_exists($routes = manager_path('routes.php'))) {
             $this->loadRoutesFrom($routes);
         }
 
@@ -78,7 +79,7 @@ class AdminServiceProvider extends ServiceProvider
 
         $this->registerRouteMiddleware();
 
-        $this->commands($this->commands);
+        //$this->commands($this->commands);
     }
 
     /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Auth;
+namespace App\Http\Manager\Auth;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Middleware\Pjax;
+use App\Http\Manager\Facades\Manager;
+use App\Http\Manager\Middleware\Pjax;
 use Illuminate\Support\Facades\Auth;
 
 class Permission

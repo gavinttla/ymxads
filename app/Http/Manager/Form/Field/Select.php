@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Form\Field;
+namespace App\Http\Manager\Form\Field;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Form\Field;
+use App\Http\Manager\Facades\Manager;
+use App\Http\Manager\Form\Field;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Str;
 
