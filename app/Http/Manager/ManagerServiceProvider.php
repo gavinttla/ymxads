@@ -54,7 +54,7 @@ class ManagerServiceProvider extends ServiceProvider
     {
 
         $this->loadViewsFrom(__DIR__.'/resources/views', 'manager');
-
+     
         if (file_exists($routes = manager_path('routes.php'))) {
             $this->loadRoutesFrom($routes);
         }

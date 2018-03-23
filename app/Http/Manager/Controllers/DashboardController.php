@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Manager\Controllers;
 
 use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller;
 
 use App\Http\Manager\Controllers\Dashboard;
 use App\Http\Manager\Facades\Manager;
@@ -10,12 +12,12 @@ use App\Http\Manager\Layout\Column;
 use App\Http\Manager\Layout\Content;
 use App\Http\Manager\Layout\Row;
 
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+//use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     
-    use AuthenticatesUsers;
+    //use AuthenticatesUsers;
     
     /**
      * Create a new controller instance.
@@ -24,7 +26,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**

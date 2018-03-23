@@ -21,6 +21,7 @@ Route::get('/homepage', 'HomeController@index')->name('homepage');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'HomeController@logout')->name('logout');
 
 
 // controller can put it into a sub folder, here is: admin

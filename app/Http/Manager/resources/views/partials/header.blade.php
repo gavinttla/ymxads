@@ -2,11 +2,11 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="{{ admin_base_path('/') }}" class="logo">
+    <a href="{{ manager_base_path('/') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini">{!! config('admin.logo-mini', config('admin.name')) !!}</span>
+        <span class="logo-mini">{!! config('manager.logo-mini', config('manager.name')) !!}</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">{!! config('admin.logo', config('admin.name')) !!}</span>
+        <span class="logo-lg">{!! config('manager.logo', config('manager.name')) !!}</span>
     </a>
 
     <!-- Header Navbar -->
@@ -40,15 +40,15 @@
 
                             <p>
                                 {{ manager::user()->name }}
-                                <small>Member since admin {{ manager::user()->created_at }}</small>
+                                <small>Member since {{ manager::user()->created_at }}</small>
                             </p>
                         </li>
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="{{ admin_base_path('auth/setting') }}" class="btn btn-default btn-flat">{{ trans('admin.setting') }}</a>
+                                <a href="{{ manager_base_path('auth/setting') }}" class="btn btn-default btn-flat">{{ trans('manager.setting') }}</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ admin_base_path('auth/logout') }}" class="btn btn-default btn-flat">{{ trans('admin.logout') }}</a>
+                                <a href="{{ manager_base_path('auth/logout') }}" class="btn btn-default btn-flat">{{ trans('manager.logout') }}</a>
                             </div>
                         </li>
                     </ul>

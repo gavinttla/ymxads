@@ -22,9 +22,9 @@ return [
      */
     'route' => [
 
-        'prefix' => 'ttadmin',
+        'prefix' => 'manager',
 
-        'namespace' => 'App\\Manager\\Controllers',
+        'namespace' => 'App\\Http\\Manager\\Controllers',
 
         //'middleware' => ['web', 'admin'],
         'middleware' => ['web', 'manager'],
@@ -33,7 +33,7 @@ return [
     /*
      * Laravel-admin install directory.
      */
-    'directory' => app_path('Manager'),
+    'directory' => app_path('Http/Manager'),
 
     /*
      * Laravel-admin html title.

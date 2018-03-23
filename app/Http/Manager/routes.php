@@ -2,14 +2,16 @@
 
 use Illuminate\Routing\Router;
 
+use App\Http\Manager\Facades\Manager;
+
 Manager::registerAuthRoutes();
 
 Route::group([
-    'prefix'        => config('admin.route.prefix'),
-    'namespace'     => config('admin.route.namespace'),
-    'middleware'    => config('admin.route.middleware'),
+    'prefix'        => config('manager.route.prefix'),
+    'namespace'     => config('manager.route.namespace'),
+    'middleware'    => config('manager.route.middleware'),
 ], function (Router $router) {
 
-    $router->get('/', 'HomeController@index');
+    $router->get('/', 'DashboardController@index');
 
 });

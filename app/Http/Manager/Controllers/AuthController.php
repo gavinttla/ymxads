@@ -22,6 +22,7 @@ class AuthController extends Controller
      */
     public function getLogin()
     {
+        dd("App\Http\Manager\Controllers\AuthController::getLogin");
         if (!Auth::guard('admin')->guest()) {
             return redirect(config('admin.route.prefix'));
         }
@@ -36,6 +37,7 @@ class AuthController extends Controller
      */
     public function postLogin(Request $request)
     {
+        dd("App\Http\Manager\Controllers\AuthController::postLogin");
         $credentials = $request->only(['username', 'password']);
 
         $validator = Validator::make($credentials, [
@@ -49,7 +51,7 @@ class AuthController extends Controller
         if (Auth::guard('admin')->attempt($credentials)) {
             admin_toastr(trans('admin.login_successful'));
 
-            return redirect()->intended(config('admin.route.prefix'));
+            return redirect()->intended(config('manager.route.prefix'));
         }
 
         return Redirect::back()->withInput()->withErrors(['username' => $this->getFailedLoginMessage()]);
@@ -62,11 +64,20 @@ class AuthController extends Controller
      */
     public function getLogout()
     {
+        dd('here');
+        $this->guard('web')->logout();
+        
+        $request->session()->invalidate();
+        
+        return redirect('/');
+        
+        /*
         Auth::guard('admin')->logout();
 
         session()->forget('url.intented');
 
         return redirect(config('admin.route.prefix'));
+        */
     }
 
     /**
