@@ -19,7 +19,7 @@ class ComposerStaticInit6c72dc3e0acedfb880866cdb717a2e15
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5e8fe2a5ffaded85af682684fe3bbf5a' => __DIR__ . '/..' . '/mews/captcha/src/helpers.php',
-        'e67aac27beea06a8cadd0aaf05f53cba' => __DIR__ . '/../..' . '/App/Http/Manager/helpers.php',
+        '638f1f90c5b3fba2aca9317768f194ab' => __DIR__ . '/../..' . '/app/Http/Manager/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -381,6 +381,7 @@ class ComposerStaticInit6c72dc3e0acedfb880866cdb717a2e15
         'App\\Http\\Manager\\Auth\\Permission' => __DIR__ . '/../..' . '/app/Http/Manager/Auth/Permission.php',
         'App\\Http\\Manager\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Manager/Controllers/AuthController.php',
         'App\\Http\\Manager\\Controllers\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Manager/Controllers/Dashboard.php',
+        'App\\Http\\Manager\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Manager/Controllers/DashboardController.php',
         'App\\Http\\Manager\\Controllers\\LogController' => __DIR__ . '/../..' . '/app/Http/Manager/Controllers/LogController.php',
         'App\\Http\\Manager\\Controllers\\MenuController' => __DIR__ . '/../..' . '/app/Http/Manager/Controllers/MenuController.php',
         'App\\Http\\Manager\\Controllers\\ModelForm' => __DIR__ . '/../..' . '/app/Http/Manager/Controllers/ModelForm.php',

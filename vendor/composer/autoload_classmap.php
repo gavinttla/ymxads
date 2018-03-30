@@ -29,6 +29,7 @@ return array(
     'App\\Http\\Manager\\Auth\\Permission' => $baseDir . '/app/Http/Manager/Auth/Permission.php',
     'App\\Http\\Manager\\Controllers\\AuthController' => $baseDir . '/app/Http/Manager/Controllers/AuthController.php',
     'App\\Http\\Manager\\Controllers\\Dashboard' => $baseDir . '/app/Http/Manager/Controllers/Dashboard.php',
+    'App\\Http\\Manager\\Controllers\\DashboardController' => $baseDir . '/app/Http/Manager/Controllers/DashboardController.php',
     'App\\Http\\Manager\\Controllers\\LogController' => $baseDir . '/app/Http/Manager/Controllers/LogController.php',
     'App\\Http\\Manager\\Controllers\\MenuController' => $baseDir . '/app/Http/Manager/Controllers/MenuController.php',
     'App\\Http\\Manager\\Controllers\\ModelForm' => $baseDir . '/app/Http/Manager/Controllers/ModelForm.php',
