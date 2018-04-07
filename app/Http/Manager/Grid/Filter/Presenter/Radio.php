@@ -51,7 +51,7 @@ class Radio extends Presenter
     {
         $script = "$('.{$this->filter->getId()}').iCheck({radioClass:'iradio_minimal-blue'});";
 
-        Admin::script($script);
+        Manager::script($script);
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Controllers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Dashboard
 {
@@ -94,11 +94,13 @@ class Dashboard
             ],
         ];
 
+        /*
         foreach ($extensions as &$extension) {
             $name = explode('/', $extension['name']);
             $extension['installed'] = array_key_exists(end($name), Admin::$extensions);
         }
-
+        */
+        
         return view('admin::dashboard.extensions', compact('extensions'));
     }
 

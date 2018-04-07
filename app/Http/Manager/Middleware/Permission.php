@@ -25,7 +25,7 @@ class Permission
      */
     public function handle(Request $request, \Closure $next, ...$args)
     {
-        if (!Admin::user() || !empty($args)) {
+        if (!Manager::user() || !empty($args)) {
             return $next($request);
         }
 
@@ -33,7 +33,7 @@ class Permission
             return $next($request);
         }
 
-        if (!Admin::user()->allPermissions()->first(function ($permission) use ($request) {
+        if (!Manager::user()->allPermissions()->first(function ($permission) use ($request) {
             return $permission->shouldPassThrough($request);
         })) {
             Checker::error();

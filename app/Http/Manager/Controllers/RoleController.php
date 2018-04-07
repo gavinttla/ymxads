@@ -21,7 +21,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return Admin::content(function (Content $content) {
+        return Manager::content(function (Content $content) {
             $content->header(trans('admin.roles'));
             $content->description(trans('admin.list'));
             $content->body($this->grid()->render());
@@ -37,7 +37,7 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        return Admin::content(function (Content $content) use ($id) {
+        return Manager::content(function (Content $content) use ($id) {
             $content->header(trans('admin.roles'));
             $content->description(trans('admin.edit'));
             $content->body($this->form()->edit($id));
@@ -51,7 +51,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return Admin::content(function (Content $content) {
+        return Manager::content(function (Content $content) {
             $content->header(trans('admin.roles'));
             $content->description(trans('admin.create'));
             $content->body($this->form());
@@ -65,7 +65,7 @@ class RoleController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Role::class, function (Grid $grid) {
+        return Manager::grid(Role::class, function (Grid $grid) {
             $grid->id('ID')->sortable();
             $grid->slug(trans('admin.slug'));
             $grid->name(trans('admin.name'));
@@ -96,7 +96,7 @@ class RoleController extends Controller
      */
     public function form()
     {
-        return Admin::form(Role::class, function (Form $form) {
+        return Manager::form(Role::class, function (Form $form) {
             $form->display('id', 'ID');
 
             $form->text('slug', trans('admin.slug'))->rules('required');

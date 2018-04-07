@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Filter\Presenter;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Text extends Presenter
 {
@@ -161,7 +161,7 @@ class Text extends Presenter
     {
         $options = json_encode($options);
 
-        Admin::script("$('#filter-modal input.{$this->filter->getId()}').inputmask($options);");
+        Manager::script("$('#filter-modal input.{$this->filter->getId()}').inputmask($options);");
 
         $this->icon = $icon;
 

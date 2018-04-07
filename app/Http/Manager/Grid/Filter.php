@@ -232,7 +232,7 @@ $("#filter-modal .submit").click(function () {
 });
 
 EOT;
-        Admin::script($script);
+        Manager::script($script);
 
         return view($this->view)->with([
             'action'  => $this->action ?: $this->urlWithoutFilters(),

@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Radio extends AbstractDisplayer
 {
@@ -22,7 +22,7 @@ class Radio extends AbstractDisplayer
 EOT;
         }
 
-        Admin::script($this->script());
+        Manager::script($this->script());
 
         return <<<EOT
 <form class="form-group grid-radio-$name" style="text-align: left" data-key="{$this->getKey()}">

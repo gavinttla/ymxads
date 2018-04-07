@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Tools;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class RefreshButton extends AbstractTool
 {
@@ -32,7 +32,7 @@ EOT;
      */
     public function render()
     {
-        Admin::script($this->script());
+        Manager::script($this->script());
 
         $refresh = trans('admin.refresh');
 

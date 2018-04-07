@@ -55,7 +55,7 @@ $('.form-history-back').on('click', function (event) {
 });
 EOT;
 
-        Admin::script($script);
+        Manager::script($script);
 
         $text = trans('admin.back');
 

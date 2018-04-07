@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Orderable extends AbstractDisplayer
 {
@@ -12,7 +12,7 @@ class Orderable extends AbstractDisplayer
             throw new \Exception('To use orderable grid, please install package [spatie/eloquent-sortable] first.');
         }
 
-        Admin::script($this->script());
+        Manager::script($this->script());
 
         return <<<EOT
 

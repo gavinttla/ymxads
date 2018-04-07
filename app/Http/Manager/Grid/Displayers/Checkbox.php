@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Checkbox extends AbstractDisplayer
 {
@@ -26,7 +26,7 @@ class Checkbox extends AbstractDisplayer
 EOT;
         }
 
-        Admin::script($this->script());
+        Manager::script($this->script());
 
         return <<<EOT
 <form class="form-group grid-checkbox-$name" style="text-align:left;" data-key="{$this->getKey()}">

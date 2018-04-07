@@ -87,7 +87,7 @@ class AuthController extends Controller
      */
     public function getSetting()
     {
-        return Admin::content(function (Content $content) {
+        return Manager::content(function (Content $content) {
             $content->header(trans('admin.user_setting'));
             $form = $this->settingForm();
             $form->tools(
@@ -96,7 +96,7 @@ class AuthController extends Controller
                     $tools->disableListButton();
                 }
             );
-            $content->body($form->edit(Admin::user()->id));
+            $content->body($form->edit(Manager::user()->id));
         });
     }
 
@@ -107,7 +107,7 @@ class AuthController extends Controller
      */
     public function putSetting()
     {
-        return $this->settingForm()->update(Admin::user()->id);
+        return $this->settingForm()->update(Manager::user()->id);
     }
 
     /**

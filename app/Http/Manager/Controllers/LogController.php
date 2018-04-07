@@ -18,11 +18,11 @@ class LogController extends Controller
      */
     public function index()
     {
-        return Admin::content(function (Content $content) {
+        return Manager::content(function (Content $content) {
             $content->header(trans('admin.operation_log'));
             $content->description(trans('admin.list'));
 
-            $grid = Admin::grid(OperationLog::class, function (Grid $grid) {
+            $grid = Manager::grid(OperationLog::class, function (Grid $grid) {
                 $grid->model()->orderBy('id', 'DESC');
 
                 $grid->id('ID')->sortable();

@@ -10,6 +10,6 @@ class Checkbox extends Radio
     {
         $script = "$('.{$this->filter->getId()}').iCheck({checkboxClass:'icheckbox_minimal-blue'});";
 
-        Admin::script($script);
+        Manager::script($script);
     }
 }

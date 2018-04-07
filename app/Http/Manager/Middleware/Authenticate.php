@@ -3,7 +3,7 @@
 namespace App\Http\Manager\Middleware;
 
 use Closure;
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 use Illuminate\Support\Facades\Auth;
 
 class Authenticate

@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Form;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 use App\Http\Manager\Form;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
@@ -904,7 +904,7 @@ class Field implements Renderable
      */
     public function render()
     {
-        Admin::script($this->script);
+        Manager::script($this->script);
 
         return view($this->getView(), $this->variables());
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Select extends AbstractDisplayer
 {
@@ -35,7 +35,7 @@ $('.$class').select2().on('change', function(){
 
 EOT;
 
-        Admin::script($script);
+        Manager::script($script);
 
         $key = $this->row->{$this->grid->getKeyName()};
 

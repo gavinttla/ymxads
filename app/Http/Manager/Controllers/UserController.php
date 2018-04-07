@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return Admin::content(function (Content $content) {
+        return Manager::content(function (Content $content) {
             $content->header(trans('admin.administrator'));
             $content->description(trans('admin.list'));
             $content->body($this->grid()->render());
@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return Admin::content(function (Content $content) use ($id) {
+        return Manager::content(function (Content $content) use ($id) {
             $content->header(trans('admin.administrator'));
             $content->description(trans('admin.edit'));
             $content->body($this->form()->edit($id));
@@ -52,7 +52,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return Admin::content(function (Content $content) {
+        return Manager::content(function (Content $content) {
             $content->header(trans('admin.administrator'));
             $content->description(trans('admin.create'));
             $content->body($this->form());

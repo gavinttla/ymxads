@@ -2,13 +2,13 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class RowSelector extends AbstractDisplayer
 {
     public function display()
     {
-        Admin::script($this->script());
+        Manager::script($this->script());
 
         return <<<EOT
 <input type="checkbox" class="grid-row-checkbox" data-id="{$this->getKey()}" />

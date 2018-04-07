@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class SwitchDisplay extends AbstractDisplayer
 {
@@ -58,7 +58,7 @@ $('.$class').bootstrapSwitch({
 
 EOT;
 
-        Admin::script($script);
+        Manager::script($script);
 
         $key = $this->row->{$this->grid->getKeyName()};
 

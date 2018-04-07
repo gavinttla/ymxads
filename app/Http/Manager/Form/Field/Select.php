@@ -125,7 +125,7 @@ $(document).on('change', "{$this->getElementClassSelector()}", function () {
 });
 EOT;
 
-        Admin::script($script);
+        Manager::script($script);
 
         return $this;
     }

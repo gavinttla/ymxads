@@ -59,7 +59,7 @@ $(".{$this->getElementClass()}").select2({
 SCRIPT;
         }
 
-        Admin::script($this->script);
+        Manager::script($this->script);
 
         return is_array($this->options) ? $this->options : [];
     }
@@ -185,7 +185,7 @@ $(document).on('change', ".{$this->getClass($column)}", function () {
 });
 EOT;
 
-        Admin::script($script);
+        Manager::script($script);
 
         return $this;
     }

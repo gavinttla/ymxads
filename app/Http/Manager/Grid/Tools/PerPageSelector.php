@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Tools;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 use App\Http\Manager\Grid;
 
 class PerPageSelector extends AbstractTool
@@ -59,13 +59,13 @@ class PerPageSelector extends AbstractTool
     }
 
     /**
-     * Render PerPageSelector。
+     * Render PerPageSelector銆�
      *
      * @return string
      */
     public function render()
     {
-        Admin::script($this->script());
+        Manager::script($this->script());
 
         $options = $this->getOptions()->map(function ($option) {
             $selected = ($option == $this->perPage) ? 'selected' : '';

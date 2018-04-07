@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Editable extends AbstractDisplayer
 {
@@ -144,7 +144,7 @@ class Editable extends AbstractDisplayer
 
         $options = json_encode($this->options);
 
-        Admin::script("$('.$class').editable($options);");
+        Manager::script("$('.$class').editable($options);");
 
         $attributes = [
             'href'       => '#',

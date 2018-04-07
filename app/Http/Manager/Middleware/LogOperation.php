@@ -21,7 +21,7 @@ class LogOperation
     {
         if ($this->shouldLogOperation($request)) {
             $log = [
-                'user_id' => Admin::user()->id,
+                'user_id' => Manager::user()->id,
                 'path'    => $request->path(),
                 'method'  => $request->method(),
                 'ip'      => $request->getClientIp(),
@@ -43,7 +43,7 @@ class LogOperation
     {
         return config('admin.operation_log.enable')
             && !$this->inExceptArray($request)
-            && Admin::user();
+            && Manager::user();
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Displayers;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Actions extends AbstractDisplayer
 {
@@ -210,7 +210,7 @@ $('.grid-row-delete').unbind('click').click(function() {
 
 SCRIPT;
 
-        Admin::script($script);
+        Manager::script($script);
 
         return <<<EOT
 <a href="javascript:void(0);" data-id="{$this->getKey()}" class="grid-row-delete">

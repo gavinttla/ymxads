@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Form\Field;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 use App\Http\Manager\Form;
 use App\Http\Manager\Form\Field;
 use App\Http\Manager\Form\NestedForm;
@@ -220,7 +220,7 @@ class HasMany extends Field
                 /**
                  * example:  $newKey = created_atstart.
                  *
-                 * Σ( ° △ °|||)︴
+                 * 危( 掳 鈻� 掳|||)锔�
                  *
                  * I don't know why a form need range input? Only can imagine is for range search....
                  */
@@ -420,7 +420,7 @@ $('#has-many-{$this->column}').on('click', '.remove', function () {
 
 EOT;
 
-        Admin::script($script);
+    Manager::script($script);
     }
 
     /**
@@ -475,7 +475,7 @@ if ($('.has-error').length) {
 }
 EOT;
 
-        Admin::script($script);
+    Manager::script($script);
     }
 
     /**

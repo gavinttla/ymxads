@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Tools;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 use Illuminate\Support\Collection;
 
 class BatchActions extends AbstractTool
@@ -75,13 +75,13 @@ class BatchActions extends AbstractTool
      */
     protected function setUpScripts()
     {
-        Admin::script($this->script());
+        Manager::script($this->script());
 
         foreach ($this->actions as $action) {
             $abstract = $action['abstract'];
             $abstract->setResource($this->grid->resource());
 
-            Admin::script($abstract->script());
+            Manager::script($abstract->script());
         }
     }
 

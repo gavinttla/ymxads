@@ -70,7 +70,7 @@ $('.$class').bootstrapSwitch({
 });
 EOT;
 
-        Admin::script($script);
+        Manager::script($script);
 
         $key = $this->row->{$this->grid->getKeyName()};
 

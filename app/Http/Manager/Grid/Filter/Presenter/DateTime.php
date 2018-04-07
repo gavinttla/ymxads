@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Filter\Presenter;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class DateTime extends Presenter
 {
@@ -43,7 +43,7 @@ class DateTime extends Presenter
     {
         $script = "$('#{$this->filter->getId()}').datetimepicker(".json_encode($this->options).');';
 
-        Admin::script($script);
+        Manager::script($script);
     }
 
     public function variables() : array

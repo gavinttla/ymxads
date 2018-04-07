@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Tools;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 use App\Http\Manager\Grid;
 
 class ExportButton extends AbstractTool
@@ -38,7 +38,7 @@ $('.export-selected').click(function (e) {
 
 SCRIPT;
 
-        Admin::script($script);
+        Manager::script($script);
     }
 
     /**

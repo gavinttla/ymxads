@@ -24,7 +24,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return Admin::content(function (Content $content) {
+        return Manager::content(function (Content $content) {
             $content->header(trans('admin.menu'));
             $content->description(trans('admin.list'));
 
@@ -95,7 +95,7 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        return Admin::content(function (Content $content) use ($id) {
+        return Manager::content(function (Content $content) use ($id) {
             $content->header(trans('admin.menu'));
             $content->description(trans('admin.edit'));
 

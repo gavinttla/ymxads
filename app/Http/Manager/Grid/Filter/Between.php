@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Grid\Filter;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 
 class Between extends AbstractFilter
 {
@@ -121,6 +121,6 @@ class Between extends AbstractFilter
             });
 EOT;
 
-        Admin::script($script);
+        Manager::script($script);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Manager\Form;
 
-use App\Http\Manager\Admin;
+use App\Http\Manager\Manager;
 use App\Http\Manager\Form;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\URL;
@@ -534,7 +534,7 @@ if ($('.has-error').length) {
 }
 
 SCRIPT;
-            Admin::script($script);
+            Manager::script($script);
         }
 
         $data = [
