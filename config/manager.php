@@ -27,7 +27,7 @@ return [
         'namespace' => 'App\\Http\\Manager\\Controllers',
 
         //'middleware' => ['web', 'admin'],
-        'middleware' => ['web', 'manager'],
+        'middleware' => ['web'],
     ],
 
     /*
@@ -48,6 +48,7 @@ return [
     /*
      * Laravel-admin auth setting.
      */
+    /*
     'auth' => [
         'guards' => [
             'admin' => [
@@ -63,6 +64,7 @@ return [
             ],
         ],
     ],
+    */
 
     /*
      * Laravel-admin upload setting.

@@ -13,8 +13,22 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+
+/**
+ * 
+ * Route: check Manager::registerAuthRoutes() that register some routes.
+ * 
+ * 
+ * @author gbcui
+ *
+ */
 class AuthController extends Controller
 {
+    
+    use AuthenticatesUsers;
+    
     /**
      * Login page.
      *
@@ -23,11 +37,11 @@ class AuthController extends Controller
     public function getLogin()
     {
         dd("App\Http\Manager\Controllers\AuthController::getLogin");
-        if (!Auth::guard('admin')->guest()) {
-            return redirect(config('admin.route.prefix'));
+        if (!Auth::guard('web')->guest()) {
+            return redirect(config('manager.route.prefix'));
         }
 
-        return view('admin::login');
+        return view('manager::login');
     }
 
     /**
@@ -64,12 +78,14 @@ class AuthController extends Controller
      */
     public function getLogout()
     {
-        dd('here');
-        $this->guard('web')->logout();
+
+        //$this->guard('web')->logout();
+        Auth::guard('web')->logout();
         
-        $request->session()->invalidate();
+        session()->forget('url.intented');
         
         return redirect('/');
+        
         
         /*
         Auth::guard('admin')->logout();
