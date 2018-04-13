@@ -90,7 +90,7 @@ class Menu extends Model
                 'order' => 2,
                 'title' => 'Products',
                 'icon' => 'fa-gift',
-                'uri' => '/manager/gift',
+                'uri' => '/gift',
                 'created_at' => null,
                 'updated_at' => null,
                 'roles' => array()
@@ -101,7 +101,7 @@ class Menu extends Model
                 'order' => 3,
                 'title' => 'Orders',
                 'icon' => 'fa-shopping-cart',
-                'uri' => '/manager/order',
+                'uri' => '/order',
                 'created_at' => null,
                 'updated_at' => null,
                 'roles' => array()
@@ -112,7 +112,7 @@ class Menu extends Model
                 'order' => 4,
                 'title' => 'Message',
                 'icon' => 'fa-paper-plane-o',
-                'uri' => '/manager/message',
+                'uri' => '/message',
                 'created_at' => null,
                 'updated_at' => null,
                 'roles' => array()
