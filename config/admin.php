@@ -22,7 +22,7 @@ return [
      */
     'route' => [
 
-        'prefix' => 'ttadmin',
+        'prefix' => 'gtadmin',
 
         'namespace' => 'App\\Admin\\Controllers',
 

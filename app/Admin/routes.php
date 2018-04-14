@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 use Illuminate\Routing\Router;
 
 Admin::registerAuthRoutes();
@@ -14,4 +14,3 @@ Route::group([
     $router->get('/', 'HomeController@index');
 
 });
-*/

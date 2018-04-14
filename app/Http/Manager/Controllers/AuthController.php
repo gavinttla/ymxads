@@ -104,7 +104,7 @@ class AuthController extends Controller
     public function getSetting()
     {
         return Manager::content(function (Content $content) {
-            $content->header(trans('admin.user_setting'));
+            $content->header(trans('manager.user_setting'));
             $form = $this->settingForm();
             $form->tools(
                 function (Form\Tools $tools) {
@@ -134,7 +134,7 @@ class AuthController extends Controller
     protected function settingForm()
     {
         return Administrator::form(function (Form $form) {
-            $form->display('username', trans('admin.username'));
+            $form->display('username', trans('manager.username'));
             $form->text('name', trans('admin.name'))->rules('required');
             $form->image('avatar', trans('admin.avatar'));
             $form->password('password', trans('admin.password'))->rules('confirmed|required');
@@ -143,7 +143,7 @@ class AuthController extends Controller
                     return $form->model()->password;
                 });
 
-            $form->setAction(admin_base_path('auth/setting'));
+            $form->setAction(manager_base_path('auth/setting'));
 
             $form->ignore(['password_confirmation']);
 
@@ -156,7 +156,7 @@ class AuthController extends Controller
             $form->saved(function () {
                 admin_toastr(trans('admin.update_succeeded'));
 
-                return redirect(admin_base_path('auth/setting'));
+                return redirect(manager_base_path('auth/setting'));
             });
         });
     }
