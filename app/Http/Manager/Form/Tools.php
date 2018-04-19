@@ -71,7 +71,7 @@ EOT;
         $slice = Str::contains($this->form->getResource(0), '/edit') ? null : -1;
         $resource = $this->form->getResource($slice);
 
-        $text = trans('admin.list');
+        $text = trans('manager.list');
 
         return <<<EOT
 <div class="btn-group pull-right" style="margin-right: 10px">

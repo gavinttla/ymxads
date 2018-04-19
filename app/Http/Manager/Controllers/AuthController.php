@@ -2,7 +2,8 @@
 
 namespace App\Http\Manager\Controllers;
 
-use App\Http\Manager\Auth\Database\Administrator;
+use App\User;
+//use App\Http\Manager\Auth\Database\Administrator;
 use App\Http\Manager\Facades\Manager;
 use App\Http\Manager\Form;
 use App\Http\Manager\Layout\Content;
@@ -133,16 +134,15 @@ class AuthController extends Controller
      */
     protected function settingForm()
     {
-        return Administrator::form(function (Form $form) {
-            $form->display('username', trans('manager.username'));
-            $form->text('name', trans('admin.name'))->rules('required');
-            $form->image('avatar', trans('admin.avatar'));
-            $form->password('password', trans('admin.password'))->rules('confirmed|required');
-            $form->password('password_confirmation', trans('admin.password_confirmation'))->rules('required')
-                ->default(function ($form) {
-                    return $form->model()->password;
-                });
-
+        return User::form(function (Form $form) {
+            $form->display('email', trans('manager.email'));
+            $form->text('name', trans('manager.name'))->rules('required');
+            $form->image('avatar', trans('manager.avatar'));
+            //$form->password('password', trans('manager.password'))->rules('confirmed|required');
+            //$form->password('password_confirmation', trans('manager.password_confirmation'))->rules('required');
+            $form->password('password', trans('manager.password'));
+            $form->password('password_confirmation', trans('manager.password_confirmation'));
+            
             $form->setAction(manager_base_path('auth/setting'));
 
             $form->ignore(['password_confirmation']);
@@ -154,7 +154,7 @@ class AuthController extends Controller
             });
 
             $form->saved(function () {
-                admin_toastr(trans('admin.update_succeeded'));
+                admin_toastr(trans('manager.update_succeeded'));
 
                 return redirect(manager_base_path('auth/setting'));
             });

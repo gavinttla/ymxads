@@ -17,10 +17,16 @@ return [
     'sign_in' => '请登录',
     'username' => '用户名',
     'password' => '密码',
+    'password_confirmation' => '确认密码',
 	'remember_me' => '记住我',
 	'login' => '登录',
 	'enter_captcha' => '输入验证码',
+    
+    'input' => '输入',
         
+    'avatar' => '头像',
+    'name' => '名字',
+    'email' => '电子邮箱',
     
     'search' => '搜索',
         
@@ -38,4 +44,5 @@ return [
     'manage_product' => '管理推广产品',    
     
 
+    'update_succeeded' => '更新成功',
 ];

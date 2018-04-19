@@ -676,7 +676,7 @@ class Field implements Renderable
      */
     public function getPlaceholder()
     {
-        return $this->placeholder ?: trans('admin.input').' '.$this->label;
+        return $this->placeholder ?: trans('manager.input').' '.$this->label;
     }
 
     /**

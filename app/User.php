@@ -2,12 +2,14 @@
 
 namespace App;
 
+use App\Http\Manager\Traits\AdminBuilder;
+use App\Http\Manager\Auth\Database\HasPermissions;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, AdminBuilder, HasPermissions;
 
     /**
      * The attributes that are mass assignable.

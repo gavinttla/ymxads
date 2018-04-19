@@ -550,7 +550,7 @@ class Form
             return $result;
         }
 
-        if ($response = $this->ajaxResponse(trans('admin.update_succeeded'))) {
+        if ($response = $this->ajaxResponse(trans('manager.update_succeeded'))) {
             return $response;
         }
 
