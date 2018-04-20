@@ -410,6 +410,8 @@ class Form
             return $response;
         }
 
+        $this->inputs = $this->removeIgnoredFields($this->inputs);
+        
         $this->relations = $this->getRelationInputs($this->inputs);
 
         $this->updates = array_except($this->inputs, array_keys($this->relations));

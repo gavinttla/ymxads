@@ -138,10 +138,19 @@ class AuthController extends Controller
             $form->display('email', trans('manager.email'));
             $form->text('name', trans('manager.name'))->rules('required');
             $form->image('avatar', trans('manager.avatar'));
+            $form->text('role', trans('manager.role'));
             //$form->password('password', trans('manager.password'))->rules('confirmed|required');
             //$form->password('password_confirmation', trans('manager.password_confirmation'))->rules('required');
-            $form->password('password', trans('manager.password'));
+            $form->password('password', trans('manager.password'))->rules('confirmed');
             $form->password('password_confirmation', trans('manager.password_confirmation'));
+
+            /*
+            $form->password('password', trans('manager.password'))->rules('confirmed|required');
+            $form->password('password_confirmation', trans('manager.password_confirmation'))->rules('required')
+            ->default(function ($form) {
+                return $form->model()->password;
+            });
+            */
             
             $form->setAction(manager_base_path('auth/setting'));
 
@@ -149,7 +158,12 @@ class AuthController extends Controller
 
             $form->saving(function (Form $form) {
                 if ($form->password && $form->model()->password != $form->password) {
+                    //dd($form);
                     $form->password = bcrypt($form->password);
+                }
+
+                if(empty($form->password)){ 
+                    $form->ignore(['password']);
                 }
             });
 

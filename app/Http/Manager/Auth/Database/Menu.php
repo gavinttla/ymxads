@@ -82,7 +82,7 @@ class Menu extends Model
                 'uri' => '/',
                 'created_at' => null,
                 'updated_at' => null,
-                'roles' => array()
+                'roles' => array('buyer', 'seller')
                 ),
             1 => array(
                 'id' => 2,
@@ -93,7 +93,7 @@ class Menu extends Model
                 'uri' => '/gift',
                 'created_at' => null,
                 'updated_at' => null,
-                'roles' => array()
+                'roles' => array('buyer', 'seller')
                 ),
             2 => array(
                 'id' => 3,
@@ -104,7 +104,7 @@ class Menu extends Model
                 'uri' => '/order',
                 'created_at' => null,
                 'updated_at' => null,
-                'roles' => array()
+                'roles' => array('buyer', 'seller')
             ),        
             3 => array(
                 'id' => 4,
@@ -115,7 +115,7 @@ class Menu extends Model
                 'uri' => '/message',
                 'created_at' => null,
                 'updated_at' => null,
-                'roles' => array()
+                'roles' => array('buyer', 'seller')
             ),
             
         );

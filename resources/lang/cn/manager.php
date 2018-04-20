@@ -27,6 +27,7 @@ return [
     'avatar' => '头像',
     'name' => '名字',
     'email' => '电子邮箱',
+    'role' => '角色',
     
     'search' => '搜索',
         
