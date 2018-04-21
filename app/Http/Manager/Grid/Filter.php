@@ -278,7 +278,8 @@ EOT;
     public function __call($method, $arguments)
     {
         if (in_array($method, $this->supports)) {
-            $className = '\\Encore\\Admin\\Grid\\Filter\\'.ucfirst($method);
+            //$className = '\\Encore\\Admin\\Grid\\Filter\\'.ucfirst($method);
+            $className = '\\App\\Http\\Manager\\Grid\\Filter\\'.ucfirst($method);
 
             return $this->addFilter(new $className(...$arguments));
         }

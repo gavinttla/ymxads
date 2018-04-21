@@ -91,6 +91,12 @@ return [
         //'users_table' => 'admin_users',
         'users_table' => 'users',
         'users_model' => Encore\Admin\Auth\Database\Administrator::class,
+        
+        'product_table' => 'products',
+        'product_model' => App\Http\Manager\Auth\Database\Product::class,
+        
+        'image_table' => 'images',
+        'image_model' => App\Http\Manager\Auth\Database\Image::class,
 
         // Role table and model.
         'roles_table' => 'admin_roles',

@@ -4,11 +4,12 @@ namespace App\Http\Manager\Auth\Database;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Role extends Model
+class Product extends Model
 {
-    protected $fillable = ['name', 'slug'];
-
+    protected $fillable = ['product_name', 'price', 'url', 'total', 'memo'];
+    
     /**
      * Create a new Eloquent model instance.
      *
@@ -16,15 +17,12 @@ class Role extends Model
      */
     public function __construct(array $attributes = [])
     {
-        $connection = config('admin.database.connection') ?: config('database.default');
 
-        $this->setConnection($connection);
-
-        $this->setTable(config('admin.database.roles_table'));
-
+        $this->setTable(config('manager.database.product_table'));
+        
         parent::__construct($attributes);
     }
-
+    
     /**
      * A role belongs to many users.
      *
@@ -33,26 +31,43 @@ class Role extends Model
     public function administrators() : BelongsToMany
     {
         $pivotTable = config('admin.database.role_users_table');
-
+        
         $relatedModel = config('admin.database.users_model');
-
+        
         return $this->belongsToMany($relatedModel, $pivotTable, 'role_id', 'user_id');
     }
-
+    
     /**
      * A role belongs to many permissions.
      *
      * @return BelongsToMany
      */
-    public function permissions() : BelongsToMany
+    public function images() : HasMany
     {
-        $pivotTable = config('admin.database.role_permissions_table');
-
-        $relatedModel = config('admin.database.permissions_model');
-
+        $pivotTable = config('manager.database.image_table');
+        
+        $relatedModel = config('manager.database.image_model');
+        
+        //return $this->belongsToMany($relatedModel, $pivotTable, 'role_id', 'permission_id');
+        return $this->hasMany($relatedModel, 'product_id', 'id');
+    }
+    
+    /**
+     * A role belongs to many permissions.
+     *
+     * @return BelongsToMany
+     */
+    public function imagesOld() : BelongsToMany
+    {
+        $pivotTable = config('manager.database.image_table');
+        
+        $relatedModel = config('manager.database.image_model');
+        
+        //return $this->belongsToMany($relatedModel, $pivotTable, 'role_id', 'permission_id');
         return $this->belongsToMany($relatedModel, $pivotTable, 'role_id', 'permission_id');
     }
-
+    
+    
     /**
      * Check user has permission.
      *
@@ -64,7 +79,7 @@ class Role extends Model
     {
         return $this->permissions()->where('slug', $permission)->exists();
     }
-
+    
     /**
      * Check user has no permission.
      *
@@ -76,7 +91,7 @@ class Role extends Model
     {
         return !$this->can($permission);
     }
-
+    
     /**
      * Detach models from the relationship.
      *
@@ -85,10 +100,10 @@ class Role extends Model
     protected static function boot()
     {
         parent::boot();
-
+        
         static::deleting(function ($model) {
             $model->administrators()->detach();
-
+            
             $model->permissions()->detach();
         });
     }

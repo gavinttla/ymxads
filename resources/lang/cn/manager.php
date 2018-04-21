@@ -29,6 +29,19 @@ return [
     'email' => '电子邮箱',
     'role' => '角色',
     
+    'product_name' => '产品名称',
+    'total' => '总数量',
+    'total_left' => '剩余数量',
+    'price' => '价格',
+    'product' => '产品',
+    'product_list' => '目前可以供选择的产品列表',
+    'product_url' => '产品链接',
+    
+    'memo' => '备注',
+    
+    'edit' => '编辑',
+    'create' => '创建',
+    
     'search' => '搜索',
         
     'dashboard' => '主面板',

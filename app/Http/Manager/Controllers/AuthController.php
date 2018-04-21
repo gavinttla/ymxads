@@ -141,16 +141,16 @@ class AuthController extends Controller
             $form->text('role', trans('manager.role'));
             //$form->password('password', trans('manager.password'))->rules('confirmed|required');
             //$form->password('password_confirmation', trans('manager.password_confirmation'))->rules('required');
-            $form->password('password', trans('manager.password'))->rules('confirmed');
-            $form->password('password_confirmation', trans('manager.password_confirmation'));
+            //$form->password('password', trans('manager.password'))->rules('confirmed');
+            //$form->password('password_confirmation', trans('manager.password_confirmation'));
 
-            /*
+     
             $form->password('password', trans('manager.password'))->rules('confirmed|required');
             $form->password('password_confirmation', trans('manager.password_confirmation'))->rules('required')
             ->default(function ($form) {
                 return $form->model()->password;
             });
-            */
+       
             
             $form->setAction(manager_base_path('auth/setting'));
 
