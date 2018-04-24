@@ -102,20 +102,25 @@ class ProductController extends Controller
             
             $form->display('id', 'ID');
             
-            //dd($form->textarea("myname", 'myname'));
+            //dd($form->text("myname", 'myname'));
             
             $form->text('product_name', trans('manager.product_name'))->rules('required');
             $form->text('price', trans('manager.price'))->rules('required');
             $form->text('url', trans('manager.product_url'))->rules('required');
             $form->text('total', trans('manager.total'))->rules('required');
-            
-            $form->text('total', trans('manager.total'))->rules('required');
+
             $form->textarea('memo', trans('manager.memo'));
             
             //$form->listbox('permissions', trans('admin.permissions'))->options(Permission::all()->pluck('name', 'id'));
             
             $form->display('created_at', trans('admin.created_at'));
             $form->display('updated_at', trans('admin.updated_at'));
+            
+            $form->saving(function (Form $form) {
+                //dd(Manager::user()->id);
+                $form->user_id = Manager::user()->id;
+            });
+            
         });
     }
 }

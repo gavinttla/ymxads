@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
-    protected $fillable = ['product_name', 'price', 'url', 'total', 'memo'];
+    protected $fillable = ['product_name', 'user_id', 'price', 'url', 'total', 'memo'];
     
     /**
      * Create a new Eloquent model instance.
@@ -101,10 +101,12 @@ class Product extends Model
     {
         parent::boot();
         
+        /*
         static::deleting(function ($model) {
             $model->administrators()->detach();
             
             $model->permissions()->detach();
         });
+        */
     }
 }

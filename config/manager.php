@@ -27,7 +27,7 @@ return [
         'namespace' => 'App\\Http\\Manager\\Controllers',
 
         //'middleware' => ['web', 'admin'],
-        'middleware' => ['web'],
+        'middleware' => ['web', 'manager'],
     ],
 
     /*
@@ -48,23 +48,24 @@ return [
     /*
      * Laravel-admin auth setting.
      */
-    /*
+
     'auth' => [
         'guards' => [
-            'admin' => [
+            'manager' => [
                 'driver'   => 'session',
-                'provider' => 'admin',
+                'provider' => 'manager',
             ],
         ],
 
         'providers' => [
-            'admin' => [
+            'manager' => [
                 'driver' => 'eloquent',
-                'model'  => Encore\Admin\Auth\Database\Administrator::class,
+                //'model'  => Encore\Admin\Auth\Database\Administrator::class,
+                'model'  => App\User::class,
             ],
         ],
     ],
-    */
+
 
     /*
      * Laravel-admin upload setting.

@@ -41,7 +41,7 @@ class ManagerServiceProvider extends ServiceProvider
             'manager.pjax',
             'manager.log',
             'manager.bootstrap',
-            'manager.permission',
+            //'manager.permission',
         ],
     ];
 
@@ -89,7 +89,7 @@ class ManagerServiceProvider extends ServiceProvider
      */
     protected function loadAdminAuthConfig()
     {
-        config(array_dot(config('admin.auth', []), 'auth.'));
+        config(array_dot(config('manager.auth', []), 'auth.'));
     }
 
     /**
