@@ -112,13 +112,19 @@ class ProductController extends Controller
             $form->textarea('memo', trans('manager.memo'));
             
             //$form->listbox('permissions', trans('admin.permissions'))->options(Permission::all()->pluck('name', 'id'));
-            
+
             $form->display('created_at', trans('admin.created_at'));
             $form->display('updated_at', trans('admin.updated_at'));
             
+            
             $form->saving(function (Form $form) {
                 //dd(Manager::user()->id);
+                $form->hidden('user_id');
                 $form->user_id = Manager::user()->id;
+                
+                $form->hidden('total_left');
+                $form->total_left = $form->total;
+                
             });
             
         });
