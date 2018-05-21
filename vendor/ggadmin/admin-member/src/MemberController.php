@@ -19,7 +19,9 @@ class MemberController
      */
     public function index()
     {
+        debugbar()->info('here1');
         return Admin::content(function (Content $content) {
+            debugbar()->info('here2');
             $content->header('Member');
             $content->description('Member list..');
 
@@ -62,6 +64,11 @@ class MemberController
     public function grid()
     {
         return Admin::grid(MemberModel::class, function (Grid $grid) {
+            
+            debugbar()->info('grip closure');
+            
+            debug('grip closure debug');
+            
             $grid->id('ID')->sortable();
             $grid->name()->display(function ($name) {
                 return "<a tabindex=\"0\" class=\"btn btn-xs btn-twitter\" role=\"button\" data-toggle=\"popover\" data-html=true title=\"Usage\" data-content=\"<code>config('$name');</code>\">$name</a>";
@@ -91,10 +98,15 @@ class MemberController
             });
             
             $grid->filter(function ($filter) {
+                debugbar()->info('filter closure');
                 $filter->disableIdFilter();
                 $filter->like('name');
                 $filter->like('email');
             });
+            
+            debugbar()->info('before grid->rows');
+            debugbar()->info($grid->rows());
+            
         });
     }
 

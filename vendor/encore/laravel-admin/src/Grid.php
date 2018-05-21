@@ -179,12 +179,18 @@ class Grid
      */
     public function __construct(Eloquent $model, Closure $builder)
     {
+        debugbar()->info('grid_construct');
+        debugbar()->info($this->rows);
+        
         $this->keyName = $model->getKeyName();
         $this->model = new Model($model);
         $this->columns = new Collection();
         $this->rows = new Collection();
         $this->builder = $builder;
 
+        debugbar()->info($this->rows);
+        debugbar()->info($this->model);
+        
         $this->setupTools();
         $this->setupFilter();
         $this->setupExporter();
@@ -543,6 +549,8 @@ class Grid
      */
     public function processFilter()
     {
+        debug($this->builder);
+        
         call_user_func($this->builder, $this);
 
         return $this->filter->execute();

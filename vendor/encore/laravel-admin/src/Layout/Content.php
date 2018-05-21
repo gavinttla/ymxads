@@ -41,6 +41,7 @@ class Content implements Renderable
      */
     public function __construct(\Closure $callback = null)
     {
+        debugbar()->info('content_construct');
         if ($callback instanceof Closure) {
             $callback($this);
         }

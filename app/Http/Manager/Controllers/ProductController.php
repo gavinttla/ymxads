@@ -68,7 +68,10 @@ class ProductController extends Controller
         return Manager::grid(Product::class, function (Grid $grid) {
             $grid->id('ID')->sortable();
             
-            $grid->product_name(trans('manager.product_name'));
+            $grid->product_name(trans('manager.product_name'))->display(function($name){
+                return "<a href='" . $this->url . "' target='_blank'>" . str_limit($name, 80) . "</a>";
+                
+            });
             
             $grid->price(trans('manager.price'));
             
@@ -116,9 +119,8 @@ class ProductController extends Controller
             $form->display('created_at', trans('admin.created_at'));
             $form->display('updated_at', trans('admin.updated_at'));
             
-            
             $form->saving(function (Form $form) {
-                //dd(Manager::user()->id);
+
                 $form->hidden('user_id');
                 $form->user_id = Manager::user()->id;
                 
