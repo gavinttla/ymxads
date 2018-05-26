@@ -20,7 +20,7 @@ class Authenticate
     {
         if (Auth::guard('web')->guest() && !$this->shouldPassThrough($request)) {
             //return redirect()->guest(manager_base_path('auth/login'));
-            return redirect()->guest(manager_base_path('/'));
+            return redirect()->guest('login');
         }
 
         return $next($request);

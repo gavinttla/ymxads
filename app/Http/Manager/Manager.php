@@ -248,8 +248,16 @@ class Manager
                 //$router->resource('auth/permissions', 'PermissionController');
                 //$router->resource('auth/menu', 'MenuController', ['except' => ['create']]);
                 //$router->resource('auth/logs', 'LogController', ['only' => ['index', 'destroy']]);
-                $router->resource('auth/product', 'ProductController');
+                $router->resource('auth/sellerproduct', 'SellerProductController');
+
+                $router->get('auth/product', 'ProductController@index');
             });
+
+
+            // product related route
+
+
+
 
             $router->get('auth/login', 'AuthController@getLogin');
             $router->post('auth/login', 'AuthController@postLogin');

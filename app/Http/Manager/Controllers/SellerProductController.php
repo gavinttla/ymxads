@@ -12,7 +12,7 @@ use Illuminate\Routing\Controller;
 
 use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
+class SellerProductController extends Controller
 {
     use ModelForm;
 
@@ -95,26 +95,25 @@ class ProductController extends Controller
         //dd(Auth::user()->id);
 
         return Manager::grid(Product::class, function (Grid $grid) {
+            $grid->id('ID')->sortable();
 
-            //$grid->id('ID')->sortable();
-
-            $grid->model()->where('is_approved', '=', 1)
+            $grid->model()->where('user_id', '=', Auth::id())
                           ->where('is_active', '=', 1);
 
 
             $grid->product_name(trans('manager.product_name'))->display(function($name){
                 return "<a href='" . $this->url . "' target='_blank'>" . str_limit($name, 80) . "</a>";
 
-            })->sortable();
+            });
 
-            $grid->price(trans('manager.price'))->sortable();
+            $grid->price(trans('manager.price'));
 
-            $grid->total(trans('manager.total'))->sortable();
-            $grid->total_left(trans('manager.total_left'))->sortable();
+            $grid->total(trans('manager.total'));
+            $grid->total_left(trans('manager.total_left'));
 
-
-            $grid->disableCreateButton();
-            $grid->disableExport();
+            $grid->is_approved(trans('manager.approved'))->display(function($value){
+                return empty($value) ? 'not approved' : 'approved';
+            });
 
             $grid->actions(function (Grid\Displayers\Actions $actions) {
                 if ($actions->row->slug == 'administrator') {
@@ -123,20 +122,10 @@ class ProductController extends Controller
             });
 
             $grid->tools(function (Grid\Tools $tools) {
-
                 $tools->batch(function (Grid\Tools\BatchActions $actions) {
                     $actions->disableDelete();
-
                 });
-
             });
-
-            $grid->filter(function ($filter){
-
-
-
-            });
-
 
         });
     }

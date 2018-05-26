@@ -71,9 +71,10 @@ class Menu extends Model
 
         return static::with('roles')->orderByRaw($byOrder)->get()->toArray();
         */
-        
-        $arrResult = array(
-            0 => array(
+
+        $arrResult = array();
+
+        $arrResult[] = array(
                 'id' => 1,
                 'parent_id' => 0,
                 'order' => 1,
@@ -83,8 +84,9 @@ class Menu extends Model
                 'created_at' => null,
                 'updated_at' => null,
                 'roles' => array('buyer', 'seller')
-                ),
-            1 => array(
+                );
+
+        $arrResult[] = array(
                 'id' => 2,
                 'parent_id' => 0,
                 'order' => 2,
@@ -94,35 +96,74 @@ class Menu extends Model
                 'created_at' => null,
                 'updated_at' => null,
                 'roles' => array('buyer', 'seller')
-                ),
-            2 => array(
+                );
+
+        $arrResult[] = array(
                 'id' => 3,
                 'parent_id' => 0,
                 'order' => 3,
+                'title' => 'Seller',
+                'icon' => 'fa-university',
+                'uri' => null,
+                'created_at' => null,
+                'updated_at' => null,
+                'roles' => array('buyer', 'seller')
+                );
+
+        $arrResult[] = array(
+                'id' => 4,
+                'parent_id' => 3,
+                'order' => 3,
+                'title' => 'Listing',
+                'icon' => 'fa-bars',
+                'uri' => '/auth/sellerproduct',
+                'created_at' => null,
+                'updated_at' => null,
+                'roles' => array('buyer', 'seller')
+        );
+
+        $arrResult[] = array(
+            'id' => 5,
+            'parent_id' => 3,
+            'order' => 4,
+            'title' => 'Billing',
+            'icon' => 'fa-envelope-open-o',
+            'uri' => '/auth/sellerproduct',
+            'created_at' => null,
+            'updated_at' => null,
+            'roles' => array('buyer', 'seller')
+        );
+
+        $arrResult[] = array(
+                'id' => 6,
+                'parent_id' => 0,
+                'order' => 4,
                 'title' => 'Orders',
                 'icon' => 'fa-shopping-cart',
                 'uri' => '/auth/order',
                 'created_at' => null,
                 'updated_at' => null,
                 'roles' => array('buyer', 'seller')
-            ),        
-            3 => array(
-                'id' => 4,
+            );
+
+
+        $arrResult[] = array(
+                'id' => 7,
                 'parent_id' => 0,
-                'order' => 4,
+                'order' => 5,
                 'title' => 'Message',
                 'icon' => 'fa-paper-plane-o',
                 'uri' => '/auth/message',
                 'created_at' => null,
                 'updated_at' => null,
                 'roles' => array('buyer', 'seller')
-            ),
-            
-        );
-     
+            );
+
+
+
         return $arrResult;
-        
-        
+
+
     }
 
     /**
